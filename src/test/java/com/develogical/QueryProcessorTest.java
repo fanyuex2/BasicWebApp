@@ -26,11 +26,6 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void knowsTeamName() throws Exception {
-        assertThat(queryProcessor.process("what is your name"), containsString("MyTeam"));
-    }
-
-    @Test
     public void knowsGreeting() throws Exception {
         assertThat(queryProcessor.process("what is your name"), containsString("fxqc"));
     }
