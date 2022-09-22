@@ -14,6 +14,9 @@ public class QueryProcessor {
         if (query.toLowerCase().contentEquals("hello")) {
             return "hey hello";
         }
+        if (query.toLowerCase().contentEquals("your name")) {
+            return "fxqc";
+        }
         return "";
     }
 }
