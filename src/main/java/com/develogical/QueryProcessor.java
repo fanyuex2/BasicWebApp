@@ -23,7 +23,7 @@ public class QueryProcessor {
             }
             return Integer.toString(max);
         }
-        if (query.toLowerCase().contains("which of the following number is both square and cube")) {
+        if (query.toLowerCase().contains("both a square and a cube")) {
             String[] parts = query.split(":");
             String[] numbers = parts[1].split(",");
             for (String num : numbers) {
