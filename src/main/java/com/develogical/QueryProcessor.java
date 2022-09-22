@@ -23,22 +23,19 @@ public class QueryProcessor {
             }
             return Integer.toString(max);
         }
-        if (query.toLowerCase().contains("both a square and a cube")) {
+        
+        if (query.toLowerCase().contains("primes")) {
             String[] parts = query.split(":");
             String[] numbers = parts[1].split(",");
             for (String num : numbers) {
                 int test = Integer.parseInt(num.substring(1));
-                Boolean sqaure = false;
-                Boolean cube = false;
-                for (int i = 1; i <= test; i++) {
-                    if (i * i == test)
-                        sqaure = true;
-                    if (i * i * i == test)
-                        cube = true;
+                Boolean prime = true;
+                for (int i = 2; i <= test-1; i++) {
+                    if (test % i == 0)
+                        prime = false;
                 }
-                if (sqaure && cube)
+                if (prime)
                     return Integer.toString(test);
-
             }
         }
         if (query.toLowerCase().contains("banana")) {
