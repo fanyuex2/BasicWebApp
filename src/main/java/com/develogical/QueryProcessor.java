@@ -23,6 +23,24 @@ public class QueryProcessor {
             }
             return Integer.toString(max);
         }
+        if (query.toLowerCase().contains("which of the following number is both square and cube")) {
+            String[] parts = query.split(":");
+            String[] numbers = parts[1].split(",");
+            for (String num : numbers) {
+                int test = Integer.parseInt(num.substring(1));
+                Boolean sqaure = false;
+                Boolean cube = false;
+                for (int i = 1; i <= test; i++) {
+                    if (i * i == test)
+                        sqaure = true;
+                    if (i * i * i == test)
+                        cube = true;
+                }
+                if (sqaure && cube)
+                    return Integer.toString(test);
+
+            }
+        }
         return "";
     }
 }
