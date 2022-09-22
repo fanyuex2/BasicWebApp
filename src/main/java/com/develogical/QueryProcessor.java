@@ -14,6 +14,15 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("your name")) {
             return "fxqc";
         }
+        if (query.toLowerCase().contains("which of the following number is the largest")) {
+            String[] parts = query.split(":");
+            String[] numbers = parts[1].split(",");
+            int max = Integer.parseInt(numbers[0].substring(1));
+            for (String num : numbers) {
+                max = Integer.max(max, Integer.parseInt(num.substring(1)));
+            }
+            return Integer.toString(max);
+        }
         return "";
     }
 }
